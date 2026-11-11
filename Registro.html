@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="es">
+    
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fast Food - Registrate</title>
+<link rel="stylesheet" href="EstilosCss/Registro.css">
+<link rel="icon" href="Fast Food.ico" type="Fast Food/x-icon">
+<link rel="shortcut icon" href="Fast Food.ico" type="Fast Food/x-icon">
+</head>
+    
+<body>
+<form action="Registro.php" method="POST"> <!--consulta el archivo php-->
+<div class="login-container">
+<h1 class="title">FastFood  <img src="img/fast%20food2.png" style="margin: -6px; margin-top: -50px"></h1>
+<h2 class="subtitle">Registrate</h2>
+<div class="social-login">
+<div class="circle fb">F</div>
+<div class="circle google">G</div>
+</div>
+
+<p>O usa tu Email como registro</p>
+    
+<form class="login-form">   <!--Requiere los campos-->
+<input type="text" name=usuario placeholder="Nombre de usuario" class="input-field" required>
+<input type="email" name=correo placeholder="Email" class="input-field" required>
+<input type="password" name=contraseña placeholder="Contraseña" class="input-field" required>
+    
+<button type="submit" class="login-btn">Registrarse</button>
+</form>
+
+<a href="Login.html" class="register">Iniciar Sesión</a> <!--Enlace a la pagina login-->
+</div>
+
+</body>
+</html>    

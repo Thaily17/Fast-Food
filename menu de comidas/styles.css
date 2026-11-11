@@ -1,0 +1,127 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f7f7f7;
+    margin: 0;
+    padding: 0;
+}
+
+header {
+    background-color: #ff5e57;
+    color: white;
+    text-align: center;
+    padding: 20px;
+}
+
+h1 {
+    margin: 0;
+    font-size: 36px;
+    font-weight: bold;
+}
+
+.menu {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+    padding: 20px;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+.item {
+    background-color: white;
+    border: 2px solid #ddd;/*rgba(0, 0, 0, 0.5) es para que el cuadro se vea transparente nrgroso*/
+    border-radius: 10px;
+    text-align: center;
+    text-emphasis-color: write;
+    padding: 15px;
+    transition: transform 0.2s;
+}
+
+.item img {
+    width: 100%;
+    height: 150px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.item h2 {
+    font-size: 20px;
+    margin: 10px 0;
+}
+
+.item p {
+    font-size: 18px;
+    color: #333;
+}
+
+.item:hover {
+    transform: scale(1.05);
+}
+
+.boton {
+    background-color: #2172b1;
+    color: rgb(18, 2, 2);
+    padding: 15px 25px;
+    border: none;
+    border-radius: 5px;
+    text-align: center;
+    font-size: 16px;
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.boton:hover {
+    background-color: #1f62ff;
+}
+
+body {
+    background-image: url('imagen/fast\ food.jpg');
+    background-size: cover; /* Ajusta la imagen para cubrir toda la pantalla */
+    background-position: center; /* Centra la imagen en la pantalla */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+    height: 175vh; /* Ajusta la altura al 100% del viewport */
+    margin: 10;
+}
+
+.button-container {
+    display: flex;
+    justify-content: space-between; /* Distribuye el espacio entre los botones */
+    gap: 0px; /* Espacio entre los botones */
+    border-radius: 100%;
+
+    
+}
+
+.button-container button {
+    padding: 10px 20px;
+    font-size: 15px;
+    cursor: pointer;
+    background-color: #11cfff;
+}
+
+/*   <a href="...."><button>Pedidos  ></button></a>    */    /*esto es para que el boton balla a otra pagina*/ 
+
+@media (max-width: 768px) {
+    .menu {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .menu {
+        grid-template-columns: 1fr;
+    }
+
+    
+}
+.botonnn{
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    padding: 10px 20px;
+    background-color: #ffb700;
+    color: white;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: transform 0.3s ease;
+}

@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Fast Food - Iniciar Sesión</title>
+    <link rel="stylesheet" type="text/css" href="EstilosCss/Login.css"> <!--Link css-->
+    <link rel="icon" href="Fast Food.ico" type="Fast Food/x-icon"> <!--icono de la pagina-->
+    <link rel="shortcut icon" href="Fast Food.ico" type="Fast Food/x-icon"> <!--icono de la pagina-->
+</head>
+
+<body>
+    <form action="Login.php" method="POST"> <!--Archivo php-->
+        <!--Inicio del estilo del formulario-->
+        <div class="login-container">
+            <h1 class="title">FastFood
+                <img src="img/fast%20food2.png" style="margin: -6px; margin-top: -50px">
+            </h1>
+            <h2 class="subtitle">Iniciar Sesión</h2>
+            <div class="social-login">
+                <div class="circle fb">F</div>
+                <div class="circle google">G</div>
+            </div>
+            <!--Fin del estilo del formulario-->
+
+            <p>O usa tu Email</p>
+            <!--Campos que se solicita-->
+            <form class="login-form">
+                <input type="email" name="correo" placeholder="Email" class="input-field" required>
+                <input type="password" name="contraseña" placeholder="Contraseña" class="input-field" required>
+
+                <a href="#" class="forgot-password">¿Olvidaste tu Contraseña?</a>
+
+                <button type="submit" class="login-btn">Iniciar Sesión</button>
+            </form>
+
+            <a href="Registro.html" class="register">Registrarse</a> <!--boton que redirige a la pagina de registro-->
+        </div>
+
+</body>
+
+</html>

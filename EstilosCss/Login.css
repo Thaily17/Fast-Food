@@ -1,0 +1,124 @@
+body {
+    font-family: 'Arial', sans-serif;  /* Fuente de letra y familia de fuentes */
+    background-image: url(../fondo.png);    /* Imagen de fondo */
+    background-size: cover;     /* Tamaño de la imagen de fondo */
+    background-position: center;    /* Posición de la imagen de fondo */
+    display: flex;   /* Tipo de display para centrar contenido */
+    justify-content: center;   /* Alineación horizontal del contenido */
+    align-items: center;  /* Alineación vertical del contenido */
+    height: 100vh;   /* Altura del cuerpo de la página */
+    width: 100vw;   /* Ancho del cuerpo de la página */
+    margin: 0;   /* Margen del cuerpo de la página */
+}
+
+
+.bad {
+   position: absolute; /* Posición absoluta */
+font-weight: bold; /* Peso de la fuente */
+margin-bottom: -570px; /* Margen inferior */
+text-align: center; /* Alineación del texto */
+width: 100%; /* Ancho */
+padding: 20px; /* Relleno */
+background-color: #ffffff; /* Color de fondo */
+color: #ff0000 /* Color del texto */
+}
+
+.login-container {
+    text-align: center; /* Alineación del texto */
+background-color: #fff; /* Color de fondo */
+padding: 20px; /* Relleno */
+border-radius: 10px; /* Radio de esquina */
+box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1); /* Sombra */
+width: 300px; /* Ancho */
+}
+
+/* Títulos */
+.title {
+    font-size: 36px; /* Tamaño de la fuente */
+font-weight: bold; /* Peso de la fuente */
+}
+
+.subtitle {
+   font-size: 24px; /* Tamaño de la fuente */
+margin-bottom: 20px; /* Margen inferior */
+}
+
+/* Botones de login social */
+.social-login {
+    display: flex; /* Tipo de display para centrar contenido */
+justify-content: center; /* Alineación horizontal del contenido */
+gap: 20px; /* Espacio entre elementos */
+margin-bottom: 20px; /* Margen inferior */
+}
+
+.circle {
+    width: 40px; /* Ancho del círculo */
+height: 40px; /* Alto del círculo */
+display: flex; /* Tipo de display para centrar contenido */
+justify-content: center; /* Alineación horizontal del contenido */
+align-items: center; /* Alineación vertical del contenido */
+border-radius: 50%; /* Radio de esquina para crear un círculo */
+font-size: 18px; /* Tamaño de la fuente */
+font-weight: bold; /* Peso de la fuente */
+color: #fff; /* Color del texto */
+}
+
+.fb {
+    background-color: #000aff; /* Color de Facebook */
+}
+
+.google {
+    background-color: #ff4500; /* Color de Google */
+}
+
+/* Campos de entrada */
+.input-field {
+   width: 95%; /* Ancho del campo de entrada */
+padding: 10px; /* Relleno del campo de entrada */
+margin-bottom: 15px; /* Margen inferior del campo de entrada */
+border: 2px solid #ff6200; /* Borde del campo de entrada */
+border-radius: 5px; /* Radio de esquina del campo de entrada */
+font-size: 16px; /* Tamaño de la fuente del campo de entrada */
+}
+
+/* Enlace de olvidaste tu contraseña */
+.forgot-password {
+   display: block; /* Mostrar como bloque */
+margin-bottom: 20px; /* Espacio inferior */
+font-size: 14px; /* Tamaño de la fuente */
+color: #000080; /* Color del texto */
+text-decoration: none; /* Sin decoración de texto */
+}
+
+.forgot-password:hover {
+    text-decoration: underline; /* Subrayado de texto */
+}
+
+/* Botón de Iniciar Sesión */
+.login-btn {
+   width: 100%; /* Ancho del botón */
+padding: 10px; /* Relleno del botón */
+background-color: #ff4500; /* Color de fondo del botón */
+color: white; /* Color del texto del botón */
+border: none; /* Sin borde */
+border-radius: 5px; /* Radio de esquina del botón */
+font-size: 18px; /* Tamaño de la fuente del botón */
+cursor: pointer; /* Cursor en forma de mano */
+}
+
+.login-btn:hover {
+   background-color: #ff4e00; /* Color de fondo del botón al hacer hover */
+}
+
+/* Enlace de registro */
+.register {
+    display: block; /* Mostrar como bloque */
+    margin-top: 20px; /* Espacio superior */
+    font-size: 16px; /* Tamaño de la fuente */
+    color: #000080; /* Color del texto */
+    text-decoration: none; /* Sin decoración de texto */
+}
+
+.register:hover {
+    text-decoration: underline; /* Subrayado de texto */
+}

@@ -1,0 +1,163 @@
+/* Estilos generales para la página */
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; /* Establece la fuente de la página */
+    background-image: url(Fondo.webp); /* Establece la imagen de fondo */
+    margin: 0; /* Elimina el margen */
+    padding: 0; /* Elimina el relleno */
+    display: flex; /* Establece el display en flex */
+    justify-content: center; /* Centra el contenido horizontalmente */
+    align-items: center; /* Centra el contenido verticalmente */
+    height: 100vh; /* Establece la altura en 100vh */
+}
+
+/* Estilos para el formulario */
+form {
+    background-color: rgba(255, 255, 255, 0.5); /* Establece el color de fondo del formulario */
+    padding: 30px; /* Establece el relleno */
+    border-radius: 10px; /* Establece el radio de la esquina */
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1); /* Establece la sombra */
+    width: 100%; /* Establece el ancho */
+    max-width: 800px; /* Establece el ancho máximo */
+    box-sizing: border-box; /* Establece el modelo de caja */
+}
+
+/* Título del formulario */
+h1 {
+    text-align: center; /* Centra el texto */
+    color: #000000; /* Establece el color del texto */
+    font-size: 24px; /* Establece el tamaño de la fuente */
+    margin-bottom: 20px; /* Establece el margen inferior */
+}
+
+/* Estilos para las etiquetas */
+label {
+    display: block; /* Establece el display en block */
+    margin-bottom: 8px; /* Establece el margen inferior */
+    font-weight: 600; /* Establece el peso de la fuente */
+    color: #000000; /* Establece el color del texto */
+    font-weight: bold; /* Establece el peso de la fuente en bold */
+    text-transform: uppercase; /* Establece la transformación del texto en mayúsculas */
+}
+
+/* Contenedor de la cuadrícula (grid) */
+.form-grid {
+    display: grid; /* Establece el display en grid */
+    grid-template-columns: repeat(3, 1fr); /* Establece el número de columnas */
+    gap: 20px; /* Establece el espacio entre columnas y filas */
+    margin-bottom: 20px; /* Establece el margen inferior */
+}
+
+/* Estilos para los campos de entrada (input y textarea) */
+input[type="text"]{
+    width: 100%; /* Establece el ancho */
+    padding: 12px; /* Establece el relleno */
+    border: 1px solid #ffffff; /* Establece el borde */
+    border-radius: 6px; /* Establece el radio de la esquina */
+    font-size: 16px; /* Establece el tamaño de la fuente */
+    box-sizing: border-box; /* Establece el modelo de caja */
+    background-color: rgba(157, 157, 157, 0.35); /* Establece el color de fondo */
+    font-weight: bold; /* Establece el peso de la fuente en bold */
+    background: linear-gradient(to right, #000000, #ff0000, #ff4500); /* Establece el gradiente de fondo */
+    color: transparent; /* Establece el color del texto en transparente */
+    -webkit-background-clip: text; /* Establece el recorte de fondo */
+    background-clip: text; /* Establece el recorte de fondo */
+    animation: LK 4s ease infinite; /* Establece la animación */
+}
+
+/*inicio de animacion de cambio de colores de la pagina direcciones*/
+@keyframes LK{
+    0%{
+        background-position: 0% 50%; /* Establece la posición del fondo */
+    }
+    50%{
+        background-position: 100% 50%; /* Establece la posición del fondo */
+    }
+    100%{
+        background-position: 0% 50%; /* Establece la posición del fondo */
+    }
+}
+/*final de animacion de cambio de colores de la pagina direcciones*/
+
+textarea{
+     width: 100%; /* Establece el ancho */
+    padding: 12px; /* Establece el relleno */
+    border: 1px solid #ffffff; /* Establece el borde */
+    border-radius: 6px; /* Establece el radio de la esquina */
+    font-size: 16px; /* Establece el tamaño de la fuente */
+    box-sizing: border-box; /* Establece el modelo de caja */
+    background-color: rgba(157, 157, 157, 0.35); /* Establece el color de fondo */
+    font-weight: bold; /* Establece el peso de la fuente en bold */
+    background: linear-gradient(to right, #000000, #ff0000, #ff4500); /* Establece el gradiente de fondo */
+    color: transparent; /* Establece el color del texto en transparente */
+    -webkit-background-clip: text; /* Establece el recorte de fondo */
+    background-clip: text; /* Establece el recorte de fondo */
+    animation: Neli 4s ease infinite; /* Establece la animación */
+}
+
+/* Estilo al enfocarse en los campos de entrada */
+input[type="text"]:focus, textarea:focus {
+    border-color: #d9d9d9; /* Establece el color del borde */
+    outline: none; /* Elimina el borde */
+}
+
+/* Estilos para el textarea */
+textarea {
+    resize: vertical; /* Establece el tamaño del textarea */
+    min-height: 120px; /* Establece la altura mínima */
+}
+
+/* Estilos para el botón de envío */
+input[type="submit"] {
+    background-image: linear-gradient(to right, #ff6200, #ff0000); /* Establece el gradiente de fondo */
+    color: white; /* Establece el color del texto */
+    padding: 12px 20px; /* Establece el relleno */
+    border: none; /* Elimina el borde */
+    border-radius: 6px; /* Establece el radio de la esquina */
+    font-size: 18px; /* Establece el tamaño de la fuente */
+    width: 100%; /* Establece el ancho */
+    cursor: pointer; /* Establece el cursor */
+    transition: background-color 1s; /* Establece la transición */
+}
+
+/* Efecto al pasar el mouse sobre el botón */
+input[type="submit"]:hover {
+    background-image: linear-gradient(to left, #ff6200, #ff0000); /* Establece el gradiente de fondo */
+}
+
+/* Efecto al hacer clic en el botón */
+input[type="submit"]:active {
+    background-color: #f5ff00; /* Establece el color de fondo */
+}
+
+/* Espaciado entre los grupos de campos */
+.form-group {
+    margin-bottom: 18px; /* Establece el margen inferior */
+}
+
+/* Para pantallas más pequeñas (por ejemplo, móviles) */
+@media (max-width: 768px) {
+    .form-grid {
+        grid-template-columns: repeat(2, 1fr); /* Establece el número de columnas */
+    }
+}
+
+/* Para pantallas muy pequeñas (como teléfonos en modo retrato) */
+@media (max-width: 480px) {
+    .form-grid {
+        grid-template-columns: 1fr; /* Establece el número de columnas */
+    }
+}
+
+/* Centrar el campo de "Indicaciones" */
+.form-group.textarea-group {
+    grid-column: span 3; /* Establece el número de columnas */
+    display: flex; /* Establece el display en flex */
+    flex-direction: column; /* Establece la dirección del flex */
+    align-items: center; /* Centra el contenido */
+}
+
+/* Estilo específico para el textarea dentro del grupo de indicaciones */
+.form-group.textarea-group textarea {
+    width: 80%; /* Establece el ancho */
+    margin-top: 10px; /* Establece el margen superior */
+}
