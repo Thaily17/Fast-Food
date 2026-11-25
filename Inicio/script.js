@@ -95,4 +95,11 @@ document.addEventListener('click', function(event) {
         sidebar.classList.remove('visible');
     }
 });
+// CERRAR SESIÓN - Solo borra el usuario
+document.getElementById('logout-btn').addEventListener('click', function(){
+  localStorage.removeItem('usuarioActual');
+  sessionStorage.clear();
 
+  alert('Sesión cerrada');
+  window.location.href = 'login.html';
+});
