@@ -1,0 +1,149 @@
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: linear-gradient(to right, #ff4635, #ffcc00de, #ff4500);
+    min-height: 100vh;
+    text-align: center;
+}
+
+header {
+    background-color: #ffbf00;
+    padding: 20px;
+    margin-bottom: 30px;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+}
+
+.logo {
+    width: 280px;
+    max-width: 90%;
+    display: block;
+    margin: 0 auto 15px;
+    border-radius: 8px;
+}
+
+header h1 {
+    color: #ffffff;
+    font-size: 32px;
+    margin-bottom: 8px;
+}
+
+header p {
+    color: #ffffff;
+    font-size: 17px;
+}
+
+.platillos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 25px;
+    max-width: 1100px;
+    margin: auto;
+    padding: 20px;
+}
+
+.item {
+    background-color: #ffffff;
+    padding: 18px;
+    border-radius: 15px;
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease;
+}
+
+.item:hover {
+    transform: translateY(-5px);
+}
+
+.item img {
+    width: 100%;
+    height: 180px;
+    object-fit: cover;
+    border-radius: 10px;
+}
+
+.item h2 {
+    color: #333333;
+    font-size: 20px;
+    margin: 15px 0 8px;
+}
+
+.precio {
+    color: #ff4500;
+    font-size: 18px;
+    font-weight: bold;
+    margin-bottom: 15px;
+}
+
+.estrellas {
+    display: flex;
+    justify-content: center;
+    gap: 5px;
+}
+
+.estrellas button {
+    background: none;
+    border: none;
+    color: #cccccc;
+    font-size: 32px;
+    cursor: pointer;
+    transition: color 0.2s, transform 0.2s;
+}
+
+.estrellas button:hover {
+    transform: scale(1.2);
+}
+
+.estrellas button.seleccionada {
+    color: #ffbf00;
+}
+
+.mensaje {
+    color: #555555;
+    font-size: 14px;
+    margin-top: 10px;
+    min-height: 18px;
+}
+
+.boton-inicio {
+    display: inline-block;
+    background-color: #ff6600;
+    color: white;
+    text-decoration: none;
+    padding: 13px 30px;
+    border-radius: 25px;
+    font-weight: bold;
+    margin: 20px auto 35px;
+    transition: background 0.3s;
+}
+
+.boton-inicio:hover {
+    background-color: #e04400;
+}
+
+footer {
+    background-color: #343a40;
+    color: white;
+    padding: 18px;
+    margin-top: 20px;
+}
+
+@media (max-width: 800px) {
+    .platillos {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 520px) {
+    .platillos {
+        grid-template-columns: 1fr;
+    }
+
+    header h1 {
+        font-size: 25px;
+    }
+}
