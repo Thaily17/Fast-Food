@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Formulario de Compras - Fast Food</title>
+<style>
+    body {
+        font-family: 'Arial', sans-serif;
+        background-image: url(../fondo.png);
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: flex-start;
+        min-height: 100vh;
+        width: 100vw;
+        margin: 0;
+        padding: 20px 0;
+    }
+    .login-container {
+        text-align: center;
+        background-color: #fff;
+        padding: 20px;
+        border-radius: 10px;
+        box-shadow: 0px 4px 8px rgba(0,0,0,0.1);
+        width: 420px;
+        max-width: 92vw;
+    }
+    .title { font-size: 36px; font-weight: bold; margin: 0; }
+    .subtitle { font-size: 24px; margin-bottom: 20px; color: #333; }
+    .section-title {
+        text-align: left;
+        font-size: 18px;
+        font-weight: bold;
+        margin: 20px 0 10px 0;
+        color: #ba0000;
+        border-bottom: 2px solid #ff4500;
+        padding-bottom: 5px;
+    }
+    .input-field {
+        width: 95%;
+        padding: 10px;
+        margin-bottom: 15px;
+        border: 2px solid #ff6200;
+        border-radius: 5px;
+        font-size: 16px;
+        box-sizing: border-box;
+    }
+    select.input-field { width: 100%; }
+    /* Productos */
+    .producto {
+        display: flex;
+        align-items: center;
+        gap: 10px;
+        text-align: left;
+        border: 1px solid #eee;
+        border-radius: 8px;
+        padding: 8px;
+        margin-bottom: 10px;
+    }
+    .producto img {
+        width: 70px;
+        height: 70px;
+        object-fit: cover;
+        border-radius: 8px;
+    }
+    .producto-info { flex: 1; }
+    .producto-info b { font-size: 15px; display: block; }
+    .producto-info span { font-size: 14px; color: #555; }
+    .producto input[type="number"] {
+        width: 55px;
+        padding: 6px;
+        border: 2px solid #ff6200;
+        border-radius: 5px;
+        text-align: center;
+    }
+    .producto input[type="checkbox"] { transform: scale(1.4); accent-color: #ff4500; }
+    .total-box {
+        background: #fff3e0;
+        border: 2px dashed #ff4500;
+        border-radius: 8px;
+        padding: 12px;
+        font-size: 20px;
+        font-weight: bold;
+        margin-top: 10px;
+    }
+    .login-btn {
+        width: 100%;
+        padding: 12px;
+        background-color: #ff4500;
+        color: white;
+        border: none;
+        border-radius: 5px;
+        font-size: 18px;
+        cursor: pointer;
+        margin-top: 15px;
+    }
+    .login-btn:hover { background-color: #fc0000; }
+    .register {
+        display: block;
+        margin-top: 20px;
+        font-size: 16px;
+        color: #000080;
+        text-decoration: none;
+    }
+    .register:hover { text-decoration: underline; }
+    .bad {
+        font-weight: bold;
+        text-align: center;
+        width: 100%;
+        padding: 10px;
+        background-color: #fff;
+        color: #ff0000;
+        display: none;
+        border-radius: 5px;
+        margin-bottom: 10px;
+    }
+</style>
+</head>
+<body>
+
+<div class="login-container">
+    <div class="title">FAST FOOD</div>
+    <div class="subtitle">Formulario de Compras</div>
+
+    <div id="error" class="bad">⚠️ Completa nombre, teléfono y elige al menos un producto</div>
+
+    <form id="formCompra" onsubmit="return enviarPedido(event)">
+
+        <div class="section-title">1. Tus datos</div>
+        <input type="text" id="nombre" class="input-field" placeholder="Nombre completo" required>
+        <input type="tel" id="telefono" class="input-field" placeholder="Teléfono / WhatsApp" required>
+        <input type="text" id="direccion" class="input-field" placeholder="Dirección de entrega" required>
+
+        <select id="pago" class="input-field" required>
+            <option value="">Elige forma de pago</option>
+            <option value="Efectivo">Efectivo</option>
+            <option value="Transferencia">Transferencia</option>
+            <option value="Tarjeta">Tarjeta al entregar</option>
+        </select>
+
+        <select id="entrega" class="input-field" required>
+            <option value="">Elige tipo de entrega</option>
+            <option value="A domicilio">A domicilio</option>
+            <option value="Recoger en tienda">Recoger en tienda</option>
+        </select>
+
+        <div class="section-title">2. Comida - Elige y pon cantidad</div>
+
+        <label class="producto">
+            <input type="checkbox" value="Burrito" data-precio="55">
+            <img src="img/burrito.jpg" alt="Burrito">
+            <div class="producto-info"><b>Burrito</b><span>$55</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <label class="producto">
+            <input type="checkbox" value="Churritos con queso" data-precio="35">
+            <img src="img/churritos.jpg" alt="Churritos">
+            <div class="producto-info"><b>Churritos con queso</b><span>$35</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <label class="producto">
+            <input type="checkbox" value="Hamburguesa" data-precio="65">
+            <img src="img/hamburguesa.jpg" alt="Hamburguesa">
+            <div class="producto-info"><b>Hamburguesa</b><span>$65</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <label class="producto">
+            <input type="checkbox" value="Hot Dog" data-precio="40">
+            <img src="img/hotdog.jpg" alt="Hot Dog">
+            <div class="producto-info"><b>Hot Dog</b><span>$40</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <label class="producto">
+            <input type="checkbox" value="Pizza" data-precio="85">
+            <img src="img/pizza.jpg" alt="Pizza">
+            <div class="producto-info"><b>Pizza</b><span>$85</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <label class="producto">
+            <input type="checkbox" value="Tacos" data-precio="45">
+            <img src="img/tacos.jpg" alt="Tacos">
+            <div class="producto-info"><b>Tacos (orden)</b><span>$45</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <label class="producto">
+            <input type="checkbox" value="Sopa de fideos con pollo" data-precio="50">
+            <img src="img/sopa.jpg" alt="Sopa">
+            <div class="producto-info"><b>Sopa de fideos con pollo</b><span>$50</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <label class="producto">
+            <input type="checkbox" value="Pulpo con pimentón" data-precio="95">
+            <img src="img/pulpo.jpg" alt="Pulpo">
+            <div class="producto-info"><b>Pulpo con pimentón</b><span>$95</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <label class="producto">
+            <input type="checkbox" value="Bowl de pollo con aguacate" data-precio="75">
+            <img src="img/bowl.jpg" alt="Bowl">
+            <div class="producto-info"><b>Bowl de pollo con aguacate</b><span>$75</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <label class="producto">
+            <input type="checkbox" value="Ensalada fresca" data-precio="60">
+            <img src="img/ensalada.jpg" alt="Ensalada">
+            <div class="producto-info"><b>Ensalada fresca</b><span>$60</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <label class="producto">
+            <input type="checkbox" value="Paella / Fideuá" data-precio="90">
+            <img src="img/paella.jpg" alt="Paella">
+            <div class="producto-info"><b>Paella / Fideuá</b><span>$90</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <label class="producto">
+            <input type="checkbox" value="Guisado de lentejas con pollo" data-precio="55">
+            <img src="img/lentejas.jpg" alt="Lentejas">
+            <div class="producto-info"><b>Guisado de lentejas con pollo</b><span>$55</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <label class="producto">
+            <input type="checkbox" value="Combo completo" data-precio="120">
+            <img src="img/combo.jpg" alt="Combo">
+            <div class="producto-info"><b>Combo completo</b><span>$120</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <div class="section-title">3. Bebidas</div>
+
+        <label class="producto">
+            <input type="checkbox" value="Horchata" data-precio="40">
+            <img src="img/horchata.jpg" alt="Horchata">
+            <div class="producto-info"><b>Horchata</b><span>$40</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <label class="producto">
+            <input type="checkbox" value="Jugo de naranja" data-precio="30">
+            <img src="img/jugo-naranja.jpg" alt="Jugo">
+            <div class="producto-info"><b>Jugo de naranja</b><span>$30</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <label class="producto">
+            <input type="checkbox" value="Agua de naranja" data-precio="25">
+            <img src="img/agua-naranja.jpg" alt="Agua naranja">
+            <div class="producto-info"><b>Agua de naranja</b><span>$25</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <label class="producto">
+            <input type="checkbox" value="Malteada de fresa" data-precio="45">
+            <img src="img/malteada-fresa.jpg" alt="Malteada">
+            <div class="producto-info"><b>Malteada de fresa</b><span>$45</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <label class="producto">
+            <input type="checkbox" value="Malteada de Oreo / Frappé" data-precio="50">
+            <img src="img/frappe-oreo.jpg" alt="Frappé">
+            <div class="producto-info"><b>Malteada Oreo / Frappé</b><span>$50</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <label class="producto">
+            <input type="checkbox" value="Coca-Cola" data-precio="25">
+            <img src="img/coca.jpg" alt="Coca">
+            <div class="producto-info"><b>Coca-Cola</b><span>$25</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <label class="producto">
+            <input type="checkbox" value="Bebida roja" data-precio="30">
+            <img src="img/bebida-roja.jpg" alt="Bebida roja">
+            <div class="producto-info"><b>Bebida roja</b><span>$30</span></div>
+            <input type="number" min="1" value="1" class="cant">
+        </label>
+
+        <div class="section-title">4. Notas</div>
+        <textarea id="notas" class="input-field" rows="2" placeholder="Ej: Sin picante, sin cebolla..."></textarea>
+
+        <div class="total-box">Total: $<span id="total">0</span></div>
+
+        <button type="submit" class="login-btn">Confirmar Pedido</button>
+        <a href="index.html" class="register">← Volver al menú</a>
+    </form>
+</div>
+
+<script>
+    const checks = document.querySelectorAll('input[type="checkbox"]');
+    const totalEl = document.getElementById('total');
+    function calcular(){
+        let total = 0;
+        document.querySelectorAll('.producto').forEach(p=>{
+            const chk = p.querySelector('input[type="checkbox"]');
+            const cant = parseInt(p.querySelector('.cant').value) || 1;
+            if(chk.checked) total += parseInt(chk.dataset.precio) * cant;
+        });
+        totalEl.textContent = total;
+    }
+    document.querySelectorAll('input').forEach(i=> i.addEventListener('change', calcular));
+    calcular();
+
+    function enviarPedido(e){
+        e.preventDefault();
+        const nombre = document.getElementById('nombre').value.trim();
+        const telefono = document.getElementById('telefono').value.trim();
+        const alguno = document.querySelector('input[type="checkbox"]:checked');
+        const error = document.getElementById('error');
+        if(!nombre || !telefono || !alguno){
+            error.style.display = 'block';
+            return false;
+        }
+        error.style.display = 'none';
+        let pedido = `Hola, soy ${nombre}\nTel: ${telefono}\nDirección: ${document.getElementById('direccion').value}\nPago: ${document.getElementById('pago').value}\nEntrega: ${document.getElementById('entrega').value}\n\nPedido:\n`;
+        document.querySelectorAll('.producto').forEach(p=>{
+            const chk = p.querySelector('input[type="checkbox"]');
+            if(chk.checked){
+                const cant = p.querySelector('.cant').value;
+                pedido += `- ${chk.value} x${cant} = $${chk.dataset.precio * cant}\n`;
+            }
+        });
+        pedido += `\nNotas: ${document.getElementById('notas').value}\nTotal: $${totalEl.textContent}`;
+        alert("¡Pedido confirmado!\n\n" + pedido);
+        return false;
+    }
+</script>
+</body>
+</html>
