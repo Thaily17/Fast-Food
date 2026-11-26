@@ -4,23 +4,24 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Menú de Comida</title>
+    
     <link rel="stylesheet" href="styles.css">
     <script defer src="script.js"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     
-    <header>
+<header>
   <button class="menu-btn" id="menu-btn"><i class="fas fa-bars"></i></button>
   <div class="search-bar">
     <input type="text" placeholder="Buscar comida...">
     <button><i class="fas fa-search"></i></button>
   </div>
-  <button class="cart-btn" id="cart-btn"><i class="fas fa-shopping-cart"></i></button>
-  <button class="logout-btn" id="logout-btn" onclick="cerrarSesion()"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</button>
+  <div class="header-actions">
+    <button class="cart-btn" id="cart-btn"><i class="fas fa-shopping-cart"></i></button>
+   <button class="logout-btn" id="logout-btn" style="background: linear-gradient(135deg, #ff4b2b, #ff416c); color: white; border: none; padding: 10px 18px; border-radius: 25px; cursor: pointer; font-weight: bold; font-size: 14px; display: flex; align-items: center; gap: 8px; white-space: nowrap; box-shadow: 0 4px 12px rgba(255,65,108,0.4);" onclick="window.location.href='../Logout.php';"><i class="fas fa-sign-out-alt"></i> Cerrar sesión</button>
+  </div>
 </header>
-
-
 
     <div class="sidebar" id="sidebar">
         <h2>Menú</h2>
