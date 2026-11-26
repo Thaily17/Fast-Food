@@ -57,28 +57,6 @@
 
             <a href="Registro.html" class="register">Registrarse</a> <!--boton que redirige a la pagina de registro-->
         </div>
-    </form>
-
-    <!-- SOLO ESTE BOTON SE AGREGO -->
-    <button type="button" id="btnAdmin" onclick="irAdmin()">⚙️ Entrar como Administrador</button>
-
-<script>
-    function irAdmin(){
-        var correo = prompt("Correo de administrador:");
-        var clave = prompt("Contraseña de administrador:");
-
-        if(correo === "admin@fastfood.com" && clave === "admin123"){
-            localStorage.setItem("usuarioFastFood", JSON.stringify({
-                email: "admin@fastfood.com",
-                nombre: "Administrador",
-                rol: "administrador"
-            }));
-            window.location.href = "admin.html";
-        } else {
-            alert("Correo o contraseña incorrectos.");
-        }
-    }
-</script>
 
 </body>
 
