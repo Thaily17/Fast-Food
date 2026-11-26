@@ -8,6 +8,26 @@
     <link rel="stylesheet" type="text/css" href="EstilosCss/Login.css"> <!--Link css-->
     <link rel="icon" href="Fast Food.ico" type="Fast Food/x-icon"> <!--icono de la pagina-->
     <link rel="shortcut icon" href="Fast Food.ico" type="Fast Food/x-icon"> <!--icono de la pagina-->
+    <style>
+        /* SOLO ESTO ES PARA EL BOTON ADMIN */
+        body{
+            display: block !important;
+        }
+        #btnAdmin{
+            display: block !important;
+            width: 90% !important;
+            max-width: 400px !important;
+            padding: 14px !important;
+            background: #ff2d00 !important;
+            color: white !important;
+            border: none !important;
+            border-radius: 10px !important;
+            font-size: 16px !important;
+            font-weight: bold !important;
+            cursor: pointer !important;
+            margin: 25px auto 20px auto !important;
+        }
+    </style>
 </head>
 
 <body>
@@ -37,6 +57,28 @@
 
             <a href="Registro.html" class="register">Registrarse</a> <!--boton que redirige a la pagina de registro-->
         </div>
+    </form>
+
+    <!-- SOLO ESTE BOTON SE AGREGO -->
+    <button type="button" id="btnAdmin" onclick="irAdmin()">⚙️ Entrar como Administrador</button>
+
+<script>
+    function irAdmin(){
+        var correo = prompt("Correo de administrador:");
+        var clave = prompt("Contraseña de administrador:");
+
+        if(correo === "admin@fastfood.com" && clave === "admin123"){
+            localStorage.setItem("usuarioFastFood", JSON.stringify({
+                email: "admin@fastfood.com",
+                nombre: "Administrador",
+                rol: "administrador"
+            }));
+            window.location.href = "admin.html";
+        } else {
+            alert("Correo o contraseña incorrectos.");
+        }
+    }
+</script>
 
 </body>
 
