@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<title>Postres - Fast Food</title>
+<style>
+body{margin:0;background:#b91c1c;font-family:Arial}
+h1{text-align:center;color:white;padding:20px;font-size:40px}
+.contenedor{display:grid;grid-template-columns:1fr 1fr 1fr;gap:20px;padding:20px;max-width:1100px;margin:auto}
+.card{background:white;border-radius:12px;padding:10px;text-align:center;box-shadow:0 4px 10px rgba(0,0,0,0.3)}
+.card img{width:100%;height:180px;object-fit:cover;border-radius:10px}
+.card h3{margin:10px 0 5px 0;font-size:16px}
+.card p{margin:5px 0;color:#333;font-weight:bold}
+.card button{background:#1e73be;color:white;border:none;padding:10px 25px;border-radius:6px;cursor:pointer;margin-top:10px;font-weight:bold}
+.card button:hover{background:#155a94}
+</style>
+</head>
+<body>
+
+<h1>Postres</h1>
+
+<div class="contenedor">
+
+<div class="card">
+<img src="imagen/flan.jpg" alt="Flan">
+<h3>Flan Napolitano</h3>
+<p>$25.00</p>
+<button onclick="comprar('Flan Napolitano',25)">COMPRAR</button>
+</div>
+
+<div class="card">
+<img src="imagen/pastel.jpg" alt="Pastel">
+<h3>Pastel de Chocolate</h3>
+<p>$35.00</p>
+<button onclick="comprar('Pastel de Chocolate',35)">COMPRAR</button>
+</div>
+
+<div class="card">
+<img src="imagen/helado.jpg" alt="Helado">
+<h3>Helado</h3>
+<p>$20.00</p>
+<button onclick="comprar('Helado',20)">COMPRAR</button>
+</div>
+
+<div class="card">
+<img src="imagen/gelatina.jpg" alt="Gelatina">
+<h3>Gelatina de Fresa</h3>
+<p>$15.00</p>
+<button onclick="comprar('Gelatina de Fresa',15)">COMPRAR</button>
+</div>
+
+<div class="card">
+<img src="imagen/brownie.jpg" alt="Brownie">
+<h3>Brownie con Nieve</h3>
+<p>$40.00</p>
+<button onclick="comprar('Brownie con Nieve',40)">COMPRAR</button>
+</div>
+
+<div class="card">
+<img src="imagen/malteada.jpg" alt="Malteada">
+<h3>Malteada Oreo</h3>
+<p>$50.00</p>
+<button onclick="comprar('Malteada Oreo',50)">COMPRAR</button>
+</div>
+
+</div>
+
+<script>
+function comprar(nombre, precio){
+  localStorage.setItem('producto', nombre);
+  localStorage.setItem('precio', precio);
+  // Te manda a la pagina de Direccion de Entrega como en tu foto 2
+  window.location.href = "../Pagina Direccion/pagina2.html";
+}
+</script>
+
+</body>
+</html>
